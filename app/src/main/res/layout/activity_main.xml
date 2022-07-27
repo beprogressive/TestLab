@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="fabInterface"
+            type="com.gmail.beprogressive.it.testlab.FabInterface" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchorGravity="top|center_horizontal"
+            app:layout_anchor="@id/fab"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_marginBottom="400dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> fabInterface.onFABClick()}"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_run"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
